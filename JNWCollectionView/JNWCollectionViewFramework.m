@@ -890,6 +890,16 @@ static void JNWCollectionViewCommonInit(JNWCollectionView *collectionView) {
 	if (_collectionViewFlags.delegateMouseDown) {
 		[self.delegate collectionView:self mouseDownInItemAtIndexPath:indexPath];
 	}
+    
+    // Wang Yandong
+    if (nil != indexPath)
+    {
+        JNWCollectionViewCell *cell = [self cellForItemAtIndexPath:indexPath];
+        if (cell.selected)
+        {
+            return;
+        }
+    }
 	
 	// Detect if modifier flags are held down.
 	// We prioritize the command key over the shift key.
