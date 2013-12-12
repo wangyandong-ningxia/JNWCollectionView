@@ -996,7 +996,14 @@ static void JNWCollectionViewCommonInit(JNWCollectionView *collectionView) {
 
 - (void) mouseDown:(NSEvent *)theEvent
 {
-    [self deselectAllItems];
+    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    NSPoint scrollPosition = [[self contentView] bounds].origin;
+    point = NSMakePoint(point.x + scrollPosition.x, point.y + scrollPosition.y);
+    NSIndexPath *indexPath = [self indexPathForItemAtPoint:point];
+    if (nil == indexPath)
+    {
+        [self deselectAllItems];
+    }
 }
 
 @end
