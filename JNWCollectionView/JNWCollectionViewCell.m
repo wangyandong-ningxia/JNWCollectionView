@@ -139,15 +139,13 @@
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
-    // Wang Yandong
-	//[super mouseDown:theEvent];
-	
+	[super mouseDown:theEvent];
+
 	[self.collectionView mouseDownInCollectionViewCell:self withEvent:theEvent];
 }
 
 - (void)mouseUp:(NSEvent *)theEvent {
-    // Wang Yandong
-	//[super mouseUp:theEvent];
+	[super mouseUp:theEvent];
 	
 	[self.collectionView mouseUpInCollectionViewCell:self withEvent:theEvent];
 	
@@ -157,8 +155,7 @@
 }
 
 - (void)rightMouseDown:(NSEvent *)theEvent {
-    // Wang Yandong
-    //[super rightMouseDown:theEvent];
+    [super rightMouseDown:theEvent];
     
     [self.collectionView rightClickInCollectionViewCell:self withEvent:theEvent];
 }
