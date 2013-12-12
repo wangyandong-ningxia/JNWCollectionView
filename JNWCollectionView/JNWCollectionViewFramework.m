@@ -992,4 +992,11 @@ static void JNWCollectionViewCommonInit(JNWCollectionView *collectionView) {
 			NSStringFromPoint(self.documentVisibleRect.origin), self.collectionViewLayout];
 }
 
+#pragma mark -
+
+- (void) mouseDown:(NSEvent *)theEvent
+{
+    [self deselectAllItems];
+}
+
 @end
